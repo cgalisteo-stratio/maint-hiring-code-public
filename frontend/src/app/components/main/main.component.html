@@ -1,0 +1,153 @@
+<div class="row justify-content-center p-2">
+  <div class="col-lg-3 col">
+    <h3 class="mt-2 text-secondary">Euro Millones</h3>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div id="bet1" class="col-lg-4 col-md-3 col-sm">
+    <div class="card h-100 border-muted" style="margin-left: 1em">
+      <div class="card-header border-muted text-secondary">
+        <h5 class="card-title">Generar Apuesta con Numero</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-muted">
+          Genera una nueva apuesta que contiene el numero dado.
+        </p>
+        <form>
+          <div class="form-group">
+            <input
+              [(ngModel)]="this.reqNumber"
+              type="text"
+              name="apuesta"
+              class="form-control"
+              id="apuesta"
+              placeholder="23"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="card-footer border-muted">
+        <button
+          type="button"
+          (click)="newBetWithNumber()"
+          class="btn btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#fun1"
+        >
+          Obtener apuesta
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade text-secondary"
+          id="fun1"
+          tabindex="-1"
+          aria-labelledby="fun1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Apuesta</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+				<p><strong>Números</strong>: {{ numbers }}</p>
+				<p><strong>Números estrella</strong>: {{ stars }}</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="bet2" class="col-lg-4 col-md-3 col-sm">
+    <div class="card h-100 border-muted" style="margin-left: 1em">
+      <div class="card-header border-muted text-secondary">
+        <h5 class="card-title">Generar Apuesta con sumatorio</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-muted">
+          Genera una nueva apuesta cuyos números suman el numero dado.
+        </p>
+        <form>
+          <div class="form-group">
+            <input
+              [(ngModel)]="this.summNumber"
+              type="text"
+              name="apuesta2"
+              class="form-control"
+              id="apuesta2"
+              placeholder="150"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="card-footer border-muted">
+        <button
+          type="button"
+          (click)="newBetWithSumm()"
+          class="btn btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#fun4"
+        >
+          Obtener apuesta
+        </button>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="fun4"
+          tabindex="-1"
+          aria-labelledby="fun4"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Apuesta</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p><strong>Números</strong>: {{ numbers }}</p>
+				<p><strong>Números estrella</strong>: {{ stars }}</p>
+
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
