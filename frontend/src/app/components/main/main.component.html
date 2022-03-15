@@ -5,6 +5,67 @@
 </div>
 
 <div class="row justify-content-center">
+  <div id="bet0" class="col-lg-4 col-md-3 col-sm">
+    <div class="card h-100 border-muted" style="margin-left: 1em">
+      <div class="card-header border-muted text-secondary">
+        <h5 class="card-title">Generar Apuesta con Numero</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-muted">
+          Genera una nueva apuesta totalmente al azar.
+        </p>
+      </div>
+
+      <div class="card-footer border-muted">
+        <button
+          type="button"
+          (click)="newBet()"
+          class="btn btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#fun1"
+        >
+          Obtener apuesta
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade text-secondary"
+          id="fun0"
+          tabindex="-1"
+          aria-labelledby="fun0"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Apuesta</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+				<p><strong>Números</strong>: {{ numbers }}</p>
+				<p><strong>Números estrella</strong>: {{ stars }}</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="bet1" class="col-lg-4 col-md-3 col-sm">
     <div class="card h-100 border-muted" style="margin-left: 1em">
       <div class="card-header border-muted text-secondary">

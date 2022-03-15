@@ -29,7 +29,19 @@ export class MainComponent implements OnInit {
 
 	}
 
+	public newBet(): void {
+		
+		this.numbers = [];
+		this.stars = [];
 
+		this.euroService.getNewBet().pipe().subscribe(response => {
+			this.numbers = response.data.item.numbers as [];
+			this.stars = response.data.item.stars as [];
+
+			console.log(this.numbers);
+			console.log(this.stars);
+		});
+	}
 
 	public newBetWithNumber(): void {
 		

@@ -25,7 +25,18 @@ export class EuroService {
 	) { }
 
 
-
+	public getNewBet(): Observable<any> {
+		return this.http.get(this.url + "getBet", { headers: this.httpHeaders }).pipe(
+			map((response: any) => response),
+			catchError(e => {
+				if (e.status == 400) {
+					return throwError(e);
+				}
+				console.error(e.error.message);
+				return throwError(e);
+			})
+		);
+	}
 
 	public getNewBetWithNumber(reqNumber: String): Observable<any> {
 		return this.http.get(this.url + "getWithNumber?number=" + reqNumber, { headers: this.httpHeaders }).pipe(
